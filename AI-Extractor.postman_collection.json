@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "60e197f2-a911-4a97-a371-3795639de854",
+		"name": "AI-Extractor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35062011",
+		"_collection_link": "https://grey-spaceship-135202.postman.co/workspace/9c10ebec-1c04-43d1-8387-7feb2df22ebc/collection/35062011-60e197f2-a911-4a97-a371-3795639de854?action=share&source=collection_link&creator=35062011"
+	},
+	"item": [
+		{
+			"name": "Extract parameters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "parameters",
+							"value": "altura,largura,profundidade, material",
+							"description": "Json or comma-separated String list of parameters to be extracted",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "Create me a cabinet with height 2000 ,wide 1900 ,depth 700 with 2 vertical divider , 2 horizontal divider , and remove part 2 and the part 6 has a double opening door",
+							"description": "String containing the text to extract the parameters",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/extract",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"extract"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
