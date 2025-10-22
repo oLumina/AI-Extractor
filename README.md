@@ -75,7 +75,7 @@ http://localhost:3000
 
 ## 🧩 Endpoints
 
-### `GET /extrair-parametros-exemplo`
+### `GET /example-extraction`
 
 Returns a predefined example of parameter extraction.
 
@@ -89,19 +89,23 @@ GET http://localhost:3000/extrair-parametros-exemplo
 
 ```json
 {
-  "Parametros": ["altura", "largura", "profundidade"],
-  "Texto": "Create me a cabinet with height 2000 ,wide 1900 ,depth 700 ...",
-  "resultado": {
-    "altura": 2000,
-    "largura": 1900,
-    "profundidade": 700
-  }
+    "Parameters": [
+        "Height",
+        "Width",
+        "Depth"
+    ],
+    "Result": {
+        "Depth": 700,
+        "Height": 2000,
+        "Width": 1900
+    },
+    "Text": "Create me a cabinet with height 2000 ,wide 1900 ,depth 700 with 2 vertical divider , 2 horizontal divider , and remove part 2 and the part 6 has a double opening door"
 }
 ```
 
 ---
 
-### `POST /extrair-parametros`
+### `POST /extract`
 
 Extracts the specified parameters from a custom natural language text.
 The result is also saved as a `.json` file in the current directory.
@@ -111,7 +115,7 @@ The result is also saved as a `.json` file in the current directory.
 ```json
 {
   "texto": "Create a table 80cm high, 120cm wide and 60cm deep",
-  "parametros": ["altura", "largura", "profundidade"]
+  "parametros": ["Height","Width","Depth"]
 }
 ```
 
@@ -119,16 +123,16 @@ The result is also saved as a `.json` file in the current directory.
 
 ```json
 {
-  "altura": "80cm",
-  "largura": "120cm",
-  "profundidade": "60cm"
+    "Depth": 700,
+    "Height": 2000,
+    "Width": 1900
 }
 ```
 
 **Alternative query string:**
 
 ```
-GET /extrair-parametros?texto=...&parametros=altura,largura,profundidade
+GET /extract?text=...&parameters=...
 ```
 
 ---

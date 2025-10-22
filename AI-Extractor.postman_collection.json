@@ -17,7 +17,7 @@
 					"urlencoded": [
 						{
 							"key": "parameters",
-							"value": "altura,largura,profundidade, material",
+							"value": "Height,Width, Depth",
 							"description": "Json or comma-separated String list of parameters to be extracted",
 							"type": "text"
 						},
